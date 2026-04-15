@@ -1,0 +1,33 @@
+.footer {
+  margin-top: 96px;
+  padding: 32px 0;
+  border-top: 1px solid var(--paper-alt);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold);
+  font-size: 0.95rem;
+}
+
+.copy {
+  font-size: 0.8rem;
+  color: var(--muted);
+  flex: 1;
+}
+
+.year {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  opacity: 0.6;
+}

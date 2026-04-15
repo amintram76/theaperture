@@ -1,0 +1,199 @@
+/* Hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--nav-h) + 72px) 0 80px;
+  border-bottom: 1px solid var(--paper-alt);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: inline-block;
+  animation: pulse 2.5s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  max-width: 720px;
+  margin-bottom: 24px;
+}
+
+.headline em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.heroCta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  transition: background var(--transition), transform var(--transition);
+}
+.btnPrimary:hover { background: var(--ink-light); transform: translateY(-1px); }
+
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border: 1.5px solid var(--paper-alt);
+  color: var(--ink-light);
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: border-color var(--transition), color var(--transition);
+}
+.btnGhost:hover { border-color: var(--gold); color: var(--ink); }
+
+/* Sections */
+.section { padding: 64px 0 0; }
+
+.sectionHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.seeAll {
+  font-size: 0.85rem;
+  color: var(--gold);
+  font-weight: 500;
+  transition: opacity var(--transition);
+}
+.seeAll:hover { opacity: 0.7; }
+
+.featuredGrid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* About strip */
+.strip {
+  margin-top: 80px;
+  padding: 64px 0;
+  background: var(--paper-alt);
+  border-top: 1px solid var(--paper-alt);
+}
+
+.stripInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.stripText h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.stripText p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.stripTopics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: flex-start;
+}
+
+.topic {
+  padding: 8px 16px;
+  border: 1.5px solid var(--paper-alt);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink-light);
+  background: var(--paper);
+  transition: border-color var(--transition), color var(--transition);
+}
+.topic:hover { border-color: var(--gold); color: var(--ink); }
+
+@media (max-width: 768px) {
+  .stripInner { grid-template-columns: 1fr; gap: 32px; }
+  .hero {
+  position: relative;
+  overflow: hidden; padding-top: calc(var(--nav-h) + 48px); }
+}
+
+/* Aperture corner graphic */
+.apertureCorner {
+  position: absolute;
+  top: calc(var(--nav-h) + 8px);
+  right: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.apertureSvg {
+  opacity: 0.7;
+  /* Clip to show only bottom-left quarter, creating corner effect */
+  clip-path: inset(50% 0 0 50%);
+  transform: scale(2.2);
+  transform-origin: top right;
+}

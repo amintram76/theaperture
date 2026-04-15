@@ -1,0 +1,157 @@
+.page {
+  padding-top: calc(var(--nav-h) + 56px);
+  padding-bottom: 96px;
+  min-height: 100vh;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 64px;
+  align-items: start;
+}
+
+/* Header */
+.header {
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* Body text */
+.body p {
+  color: var(--ink-light);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  max-width: 620px;
+}
+
+.body h2 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 40px 0 16px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.list li {
+  padding-left: 20px;
+  position: relative;
+  color: var(--ink-light);
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+.list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-family: var(--font-display);
+}
+
+.list strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  top: calc(var(--nav-h) + 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid var(--paper-alt);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.cardLabel {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.cardText {
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  line-height: 1.5;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  background: var(--tag-bg);
+  border-radius: 3px;
+  color: var(--muted);
+}
+
+.externalLink,
+.internalLink {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gold);
+  transition: opacity var(--transition);
+}
+
+.externalLink:hover,
+.internalLink:hover {
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .sidebar {
+    position: static;
+  }
+}
